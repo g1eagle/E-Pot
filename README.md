@@ -1,3 +1,5 @@
+Honestly not my work just adding other honeypots to this, go see the original authors work. 
+
 manuka - docker honeypot setup script
 ======
 
