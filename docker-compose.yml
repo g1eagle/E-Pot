@@ -30,6 +30,8 @@ glastopf:
     image: g1eagle/glastopf
     volumes:
        - var/glastopf:/vol/glastopf
+       - var/glastopf1/log:/vol/glastopf/log
     ports:
        - "80:80"
     restart: always
+    working_dir: /vol/glastopf
