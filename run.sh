@@ -2,7 +2,7 @@
 DIR=$(cd $(dirname "$0"); pwd)
 KIPPO_UID=499:499
 DIONAEA_UID=nobody:nogroup
-YML=https://raw.githubusercontent.com/andrewmichaelsmith/manuka/master/docker-compose.yml
+YML=https://raw.githubusercontent.com/g1eagle/E-Pot/master/docker-compose.yml
 
 #donwload/update yml
 curl -q $YML > docker-compose.yml
