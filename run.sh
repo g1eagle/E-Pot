@@ -43,5 +43,6 @@ mkdir -p $DIR/var/dionaea/bistreams
 
 sudo chown -R $KIPPO_UID $DIR/var/kippo 
 sudo chown -R $DIONAEA_UID $DIR/var/dionaea
+sudo chown -R $DIONAEA_UID $DIR/var/glastopf
 
 sudo docker-compose up -d
