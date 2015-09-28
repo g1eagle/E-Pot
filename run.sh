@@ -33,7 +33,7 @@ sudo service ssh reload
 
 # Directory setup
 echo "Putting files in $DIR/var"
-mkdir -p $DIR/var/kippo $DIR/var/dionaea
+mkdir -p $DIR/var/kippo $DIR/var/dionaea $DIR/var/glastopf
 
 #Dionaea's directories
 mkdir -p $DIR/var/dionaea/wwwroot
