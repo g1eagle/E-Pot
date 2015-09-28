@@ -25,3 +25,11 @@ dionaea:
        - "69:69/udp"
        - "5060:5060/udp"
     restart: always
+
+glastopf:
+    image: g1eagle/glastopf
+    volumes:
+       - var/glastopf:/vol/glastopf
+    ports:
+       - "80:80"
+    restart: always
