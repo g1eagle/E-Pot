@@ -20,7 +20,7 @@ dionaea:
     image: andrewmichaelsmith/dionaea
     volumes:
        - var/dionaea:/vol/dionaea
-	- var/dionaea-conf:/etc/dionaea
+       - var/dionaea-conf:/etc/dionaea
     ports:
        - "21:21"
        - "42:42"
