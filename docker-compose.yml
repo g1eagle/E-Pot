@@ -32,5 +32,5 @@ dionaea:
        - "5061:5061"
        - "69:69/udp"
        - "5060:5060/udp"
+    working_dir: /vol/dionaea
     restart: always
-
