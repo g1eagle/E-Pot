@@ -1,3 +1,17 @@
+ningix:
+    image: g1eagle/docker_ngninx
+    volumes:
+      - var/ngninx:/etc/nginx/sites-enabled
+      - var/ngninx:/etc/nginx/sites-available
+      - var/ngninx:/var/log/nginx
+      - var/ngninx:/home/www
+    restart: always
+mysql:
+    image: g1eagle/Docker_mysql
+    volumes:
+      - var/mysql:/var/lib/mysql
+    restart: always
+    working_dir: /vol/mysql
 glastopf:
     image: g1eagle/glastopf
     volumes:
