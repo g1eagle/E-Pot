@@ -33,7 +33,6 @@ dionaea:
     image: andrewmichaelsmith/dionaea
     volumes:
        - var/dionaea:/vol/dionaea
-       - var/dionaea-conf:/etc/dionaea
     ports:
        - "21:21"
        - "42:42"
@@ -47,5 +46,4 @@ dionaea:
        - "5061:5061"
        - "69:69/udp"
        - "5060:5060/udp"
-    working_dir: /vol/dionaea
     restart: always
