@@ -29,7 +29,6 @@ kippo:
        - "22:2222"
     restart: always
     working_dir: /vol/kippo
-
 dionaea:
     image: andrewmichaelsmith/dionaea
     volumes:
@@ -38,6 +37,7 @@ dionaea:
     ports:
        - "21:21"
        - "42:42"
+       - "81:80"       
        - "135:135"
        - "443:443"
        - "445:445"
