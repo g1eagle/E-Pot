@@ -1,5 +1,7 @@
 ningix:
     image: g1eagle/docker_ngninx
+    ports:
+       - "81:80"
     volumes:
       - var/ngninx:/etc/nginx/sites-enabled
       - var/ngninx:/etc/nginx/sites-available
