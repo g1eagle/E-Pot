@@ -1,5 +1,5 @@
 ningix:
-    image: g1eagle/docker_ngninx
+    image: g1eagle/docker_nginx
     ports:
        - "82:80"
     volumes:
