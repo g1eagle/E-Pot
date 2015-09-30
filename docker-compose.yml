@@ -3,10 +3,10 @@ ningix:
     ports:
        - "81:80"
     volumes:
-      - var/ngninx:/etc/nginx/sites-enabled
-      - var/ngninx:/etc/nginx/sites-available
-      - var/ngninx:/var/log/nginx
-      - var/ngninx:/home/www
+      - var/ngninx/sites-enabled:/etc/nginx/sites-enabled
+      - var/ngninx/sites-available:/etc/nginx/sites-available
+      - var/ngninx/log/nginx:/var/log/nginx
+      - var/ngninx/home/www:/home/www
     restart: always
 mysql:
     image: g1eagle/docker_mysql
