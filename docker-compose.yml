@@ -7,7 +7,7 @@ ningix:
       - var/ngninx:/home/www
     restart: always
 mysql:
-    image: g1eagle/Docker_mysql
+    image: g1eagle/docker_mysql
     volumes:
       - var/mysql:/var/lib/mysql
     restart: always
