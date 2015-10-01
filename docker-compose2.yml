@@ -1,6 +1,6 @@
 mysql:
     image:mysql
-    env_file:
+    env_file: 
         - ./common.env
     container_name: phpmyadmin-mysql
 phpmyadmin
