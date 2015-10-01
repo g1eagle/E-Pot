@@ -1,3 +1,15 @@
+mysql:
+    image:mysql
+    env_file:
+        - ./common.env
+    container_name: phpmyadmin-mysql
+phpmyadmin
+    image:
+    links:
+        - phpmyadmin-mysql:mysql
+    container_name: phpmyadmin
+    ports:
+       - "80:3240"
 glastopf:
     image: g1eagle/glastopf
     volumes:
