@@ -1,11 +1,12 @@
 mysql:
     image:mysql
-    env_file: .env
-    env_file:
-        - ./common.env
+    environment:
+        - MYSQL_ROOT_PASSWORD=password
     container_name: phpmyadmin-mysql
 phpmyadmin
-    image:
+    image: corbinu/docker-phpmyadmin
+    environment:
+        - MYSQL_USERNAME=root
     links:
         - phpmyadmin-mysql:mysql
     container_name: phpmyadmin
