@@ -14,8 +14,8 @@ phpmyadmin:
 glastopf:
     image: g1eagle/glastopf
     volumes:
-      - var/glastopf:/vol/glastopf
-      - var/glastopf1/log:/vol/glastopf/log
+      - ./var/glastopf:/vol/glastopf
+      - ./var/glastopf1/log:/vol/glastopf/log
     links:
         - mysql:glastopf-mysql
     ports:
@@ -25,7 +25,7 @@ glastopf:
 kippo:
     image: andrewmichaelsmith/kippo
     volumes:
-       - var/kippo:/vol/kippo
+       - ./var/kippo:/vol/kippo
     links:
         - mysql:kippo-mysql
     ports:
@@ -35,7 +35,7 @@ kippo:
 dionaea:
     image: andrewmichaelsmith/dionaea
     volumes:
-       - var/dionaea:/vol/dionaea
+       - ./var/dionaea:/vol/dionaea
     links:
         - mysql:dionaea-mysql
     ports:
