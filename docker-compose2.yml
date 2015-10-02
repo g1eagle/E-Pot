@@ -17,6 +17,8 @@ glastopf:
     volumes:
       - var/glastopf:/vol/glastopf
       - var/glastopf1/log:/vol/glastopf/log
+    links:
+        - mysql:glastopf-mysql
     ports:
        - "80:80"
     restart: always
@@ -25,6 +27,8 @@ kippo:
     image: andrewmichaelsmith/kippo
     volumes:
        - var/kippo:/vol/kippo
+    links:
+        - mysql:kippo-mysql
     ports:
        - "22:2222"
     restart: always
@@ -33,6 +37,8 @@ dionaea:
     image: andrewmichaelsmith/dionaea
     volumes:
        - var/dionaea:/vol/dionaea
+    links:
+        - mysql:dionaea-mysql
     ports:
        - "21:21"
        - "42:42"
