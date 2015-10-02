@@ -2,6 +2,8 @@ mysql:
     image: mysql
     environment:
         - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./var/mysql:/vol/mysql
     restart: always
 phpmyadmin:     
     image: corbinu/docker-phpmyadmin
