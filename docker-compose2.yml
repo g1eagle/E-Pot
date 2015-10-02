@@ -1,7 +1,6 @@
 mysql:
     image: mysql
     environment:
-        - MYSQL_USERNAME=root
         - MYSQL_ROOT_PASSWORD=password
     restart: always
 phpmyadmin:     
