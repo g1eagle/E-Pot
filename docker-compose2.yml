@@ -8,7 +8,7 @@ phpmyadmin:
     environment:
         - MYSQL_USERNAME=root
     links:
-        - phpmyadmin-mysql:mysql
+        - mysql:phpmyadmin-mysql
     container_name: phpmyadmin
     ports:
        - "80:3240"
