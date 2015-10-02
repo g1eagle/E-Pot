@@ -10,7 +10,7 @@ phpmyadmin:
     links:
         - mysql:phpmyadmin-mysql
     ports:
-       - "80:3240"
+       - "3240:80"
 glastopf:
     image: g1eagle/glastopf
     volumes:
