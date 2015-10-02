@@ -48,4 +48,6 @@ sudo chown -R $DIONAEA_UID $DIR/var/mysql
 
 docker run --name some-mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
 
+sleep 60
+
 sudo docker-compose up -d
