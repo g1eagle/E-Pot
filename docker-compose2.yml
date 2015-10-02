@@ -1,9 +1,9 @@
-mysql:
+mysql: 
     image:mysql
-  environment:
+    environment: 
     MYSQL_ROOT_PASSWORD: password
     container_name: phpmyadmin-mysql
-phpmyadmin
+phpmyadmin: 
     image: corbinu/docker-phpmyadmin
     environment:
         - MYSQL_USERNAME=root
