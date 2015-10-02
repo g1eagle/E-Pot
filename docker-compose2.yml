@@ -2,14 +2,13 @@ mysql:
     image: mysql
     environment:
         - MYSQL_USERNAME=root
-    container_name: phpmyadmin-mysql
+    restart: always
 phpmyadmin:     
     image: corbinu/docker-phpmyadmin
     environment:
         - MYSQL_USERNAME=root
     links:
         - mysql:phpmyadmin-mysql
-    container_name: phpmyadmin
     ports:
        - "80:3240"
 glastopf:
