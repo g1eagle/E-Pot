@@ -46,7 +46,7 @@ sudo chown -R $DIONAEA_UID $DIR/var/dionaea
 sudo chown -R $DIONAEA_UID $DIR/var/glastopf
 sudo chown -R $DIONAEA_UID $DIR/var/mysql
 
-docker run --name some-mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+docker run --name mysql -v /var/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
 
 sleep 60
 
