@@ -1,9 +1,9 @@
 mysql: 
     image: mysql
-  environment:
-    SPARK_WORKER_CORES: 2
+    environment:
+        SPARK_WORKER_CORES: 2
     container_name: phpmyadmin-mysql
-phpmyadmin: 
+phpmyadmin:     
     image: corbinu/docker-phpmyadmin
     environment:
         - MYSQL_USERNAME=root
