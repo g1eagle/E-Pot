@@ -1,6 +1,6 @@
 mysql:
     image:mysql
-    environment:
+    environment: 
         - MYSQL_ROOT_PASSWORD=password
     container_name: phpmyadmin-mysql
 phpmyadmin
