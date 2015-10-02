@@ -6,7 +6,7 @@ mysql:
       - ./var/mysql:/vol/mysql
     restart: always
 phpmyadmin:     
-    image: corbinu/docker-phpmyadmin
+    image: g1eagle/docker_phpmyadmin
     environment:
         - MYSQL_USERNAME=root
     links:
@@ -25,7 +25,7 @@ glastopf:
     restart: always
     working_dir: /vol/glastopf
 kippo:
-    image: andrewmichaelsmith/kippo
+    image: g1eagle/docker_kippo
     volumes:
        - ./var/kippo:/vol/kippo
     links:
