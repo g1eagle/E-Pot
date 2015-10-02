@@ -1,7 +1,7 @@
 mysql: 
     image:mysql
-    environment: 
-    MYSQL_ROOT_PASSWORD: password
+  environment:
+    SPARK_WORKER_CORES: 2
     container_name: phpmyadmin-mysql
 phpmyadmin: 
     image: corbinu/docker-phpmyadmin
