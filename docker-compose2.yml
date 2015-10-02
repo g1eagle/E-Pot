@@ -1,5 +1,5 @@
 mysql: 
-    image:mysql
+    image: mysql
   environment:
     SPARK_WORKER_CORES: 2
     container_name: phpmyadmin-mysql
