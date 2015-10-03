@@ -1,8 +1,9 @@
+
 phpmyadmin:     
     image: g1eagle/docker_phpmyadmin
     environment:
         - MYSQL_USERNAME=root
-    links:
+    external_links:
         - mysql:phpmyadmin-mysql
     ports:
        - "3240:80"
@@ -11,7 +12,7 @@ glastopf:
     volumes:
       - ./var/glastopf:/vol/glastopf
       - ./var/glastopf1/log:/vol/glastopf/log
-    links:
+    external_links:
         - mysql:glastopf-mysql
     ports:
        - "80:80"
@@ -21,7 +22,7 @@ kippo:
     image: g1eagle/docker_kippo
     volumes:
        - ./var/kippo:/vol/kippo
-    links:
+    external_links:
         - mysql:kippo-mysql
     ports:
        - "22:2222"
@@ -31,7 +32,7 @@ dionaea:
     image: andrewmichaelsmith/dionaea
     volumes:
        - ./var/dionaea:/vol/dionaea
-    links:
+    external_links:
         - mysql:dionaea-mysql
     ports:
        - "21:21"
