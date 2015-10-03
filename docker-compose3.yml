@@ -19,7 +19,7 @@ glastopf:
     restart: always
     working_dir: /vol/glastopf
 kippo:
-    image: g1eagle/docker_kippo
+    image: andrewmichaelsmith/kippo
     volumes:
        - ./var/kippo:/vol/kippo
     external_links:
