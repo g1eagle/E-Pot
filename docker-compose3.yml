@@ -8,7 +8,7 @@ phpmyadmin:
     ports:
        - "3240:80"
 glastopf:
-    image: g1eagle/glastopf
+    image: g1eagle/docker_glastopf
     volumes:
       - ./var/glastopf:/vol/glastopf
       - ./var/glastopf1/log:/vol/glastopf/log
