@@ -29,7 +29,7 @@ kippo:
     restart: always
     working_dir: /vol/kippo
 dionaea:
-    image: andrewmichaelsmith/dionaea
+    image: g1eagle/docker_dionaea
     volumes:
        - ./var/dionaea:/vol/dionaea
     external_links:
