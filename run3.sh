@@ -51,6 +51,8 @@ mkdir -p $DIR/var/dionaea/binaries
 mkdir -p $DIR/var/dionaea/log
 mkdir -p $DIR/var/dionaea/bistreams
 
+mkdir -p $DIR/var/mysql
+
 sudo chown -R $KIPPO_UID $DIR/var/kippo 
 sudo chown -R $DIONAEA_UID $DIR/var/dionaea
 sudo chown -R $DIONAEA_UID $DIR/var/glastopf
@@ -62,9 +64,9 @@ sleep 60
 echo "docker run --name mysql -v /var/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d mysql"
 echo "docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin"
 
-docker run -d --name glastopf --link mysql:mysql -v /var/glastopf:/vol/glastopf --name glastopf g1eagle/docker_glastopf
-docker run -d --name kippo--link mysql:mysql -v /var/kippo:/vol/kippo --name kippo andrewmichaelsmith/kippo
-docker run -d --name dionaea --link mysql:mysql -v /var/dionaea:/vol/dionaea --name dionaea g1eagle/docker_dionaea
+
+sudo docker-compose up -d
+
 docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin
 
 

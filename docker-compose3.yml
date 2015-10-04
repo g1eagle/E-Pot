@@ -1,12 +1,4 @@
 
-phpmyadmin:     
-    image: g1eagle/docker_phpmyadmin
-    environment:
-        - MYSQL_USERNAME=root
-    external_links:
-        - mysql:phpmyadmin-mysql
-    ports:
-       - "3240:80"
 glastopf:
     image: g1eagle/docker_glastopf
     volumes:
