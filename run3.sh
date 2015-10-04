@@ -15,6 +15,7 @@ if ["$docker" == "y"]; then
 	sudo apt-get update
 	sudo apt-get -y install lxc-docker
 	exit 1
+fi
 
 #install docker-compose
 #sudo apt-get install -y python-pip
