@@ -60,7 +60,8 @@ sudo chown -R $DIONAEA_UID $DIR/var/mysql
 docker run --name mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d mysql
 
 sleep 60
-
+echo "docker run --name mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d mysql"
+echo "docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin"
 
 docker run -d --link mysql:mysql -v /var/glastopf:/vol/glastopf --name glastopf g1eagle/glastopf
 docker run -d --link mysql:mysql -v /var/kippo:/vol/kippo --name kippo andrewmichaelsmith/kippo
