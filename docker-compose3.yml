@@ -8,7 +8,7 @@ phpmyadmin:
     ports:
        - "3240:80"
 glastopf:
-    image: g1eagle/glastopf
+    image: g1eagle/docker_glastopf
     volumes:
       - ./var/glastopf:/vol/glastopf
       - ./var/glastopf1/log:/vol/glastopf/log
@@ -19,7 +19,7 @@ glastopf:
     restart: always
     working_dir: /vol/glastopf
 kippo:
-    image: g1eagle/docker_kippo
+    image: andrewmichaelsmith/kippo
     volumes:
        - ./var/kippo:/vol/kippo
     external_links:
@@ -29,7 +29,7 @@ kippo:
     restart: always
     working_dir: /vol/kippo
 dionaea:
-    image: andrewmichaelsmith/dionaea
+    image: g1eagle/docker_dionaea
     volumes:
        - ./var/dionaea:/vol/dionaea
     external_links:
