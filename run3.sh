@@ -62,9 +62,9 @@ docker run --name mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD
 sleep 60
 
 
-docker run -d --link mysql:mysql -v ./var/glastopf:/vol/glastopf --name glastopf g1eagle/glastopf
-docker run -d --link mysql:mysql -v ./var/kippo:/vol/kippo --name kippo andrewmichaelsmith/kippo
-docker run -d --link mysql:mysql -v ./var/dionaea:/vol/dionaea --name dionaea g1eagle/docker_dionaea
+docker run -d --link mysql:mysql -v /var/glastopf:/vol/glastopf --name glastopf g1eagle/glastopf
+docker run -d --link mysql:mysql -v /var/kippo:/vol/kippo --name kippo andrewmichaelsmith/kippo
+docker run -d --link mysql:mysql -v /var/dionaea:/vol/dionaea --name dionaea g1eagle/docker_dionaea
 docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin
 
 
