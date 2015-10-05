@@ -17,8 +17,8 @@ if [ "$docker" == "y" ]; then
 fi
 
 #install docker-compose
-#sudo apt-get install -y python-pip
-#sudo pip install docker-compose
+sudo apt-get install -y python-pip
+sudo pip install docker-compose
 
 echo "Enter Root User name"
 read root
