@@ -1,6 +1,7 @@
 
 glastopf:
     image: g1eagle/docker_glastopf
+    container_name: glastopf
     volumes:
       - ./var/glastopf:/vol/glastopf
       - ./var/glastopf1/log:/vol/glastopf/log
@@ -12,6 +13,7 @@ glastopf:
     working_dir: /vol/glastopf
 kippo:
     image: andrewmichaelsmith/kippo
+    container_name: kippo
     volumes:
        - ./var/kippo:/vol/kippo
     external_links:
@@ -22,6 +24,7 @@ kippo:
     working_dir: /vol/kippo
 dionaea:
     image: g1eagle/docker_dionaea
+    container_name: dionaea
     volumes:
        - ./var/dionaea:/vol/dionaea
     external_links:
