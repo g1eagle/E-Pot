@@ -18,6 +18,8 @@ kippo:
        - ./var/kippo:/vol/kippo
     external_links:
         - mysql:kippo-mysql
+    expose:
+       - "3000"
     ports:
        - "22:2222"
     restart: always
