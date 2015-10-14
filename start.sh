@@ -13,8 +13,8 @@ while [ "$RUNNING"  == false ]; do
 done
 
 MYSQLIP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' mysql)
-cp /Home/Student/var/glastopf/glastopf.cfg2 /Home/Student/var/glastopf/glastopf.cfg
-sed -i "s/-localgost-/$MYSQLIP/" /Home/Student/var/glastopf.cfg
+cp /home/Student/var/glastopf/glastopf.cfg2 /home/Student/var/glastopf/glastopf.cfg
+sed -i "s/-localgost-/$MYSQLIP/" /home/Student/var/glastopf.cfg
 
 RUNNING=$(sudo docker inspect --format '{{.State.Running}}' glastopf)
 while [ "$RUNNING"  == false ]; do
