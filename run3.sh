@@ -60,7 +60,6 @@ sudo chown -R $DIONAEA_UID $DIR/var/mysql
 
 docker run --name mysql -v /var/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d mysql
 
-
 echo "docker run --restart=always --name mysql -v /var/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d mysql"
 echo "docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin"
 
@@ -71,5 +70,6 @@ sudo docker-compose up -d
 
 docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin
 
+cp /Home/Student/var/glastopf/glastopf.cfg1 /Home/Student/var/glastopf/glastopf.cfg2
 
 

@@ -1,4 +1,3 @@
-
 glastopf:
     image: g1eagle/docker_glastopf
     container_name: glastopf
@@ -16,6 +15,7 @@ kippo:
     container_name: kippo
     volumes:
        - ./var/kippo:/vol/kippo
+       - ./var/kippo1:/vol/opt/kippo
     external_links:
         - mysql:kippo-mysql
     expose:
