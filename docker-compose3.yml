@@ -16,6 +16,8 @@ kippo:
     volumes:
        - ./var/kippo:/vol/kippo
        - ./var/kippo1:/vol/opt/kippo
+       - ./var/kippo2:/./opt/kippo
+       - ./var/kippo3:/opt/kippo
     external_links:
         - mysql:kippo-mysql
     expose:
