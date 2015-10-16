@@ -105,12 +105,52 @@ sudo sed -i "s/-glastopfpass-/$glastopfpass/" $DIR/loadSQL.sql
 sudo sed -i "s/-kippouser-/$kippouser/" $DIR/loadSQL.sql
 sudo sed -i "s/-kippopass-/$kippopass/" $DIR/loadSQL.sql
 echo "load start"
-sudo sed -i "s:dir:$DIR:" /etc/start.sh
+sudo sed -i "s:-dir-:$DIR:" /etc/start.sh
 
 echo "$DIR"
 
 sudo docker start kippo
 sudo docker start glastopf
+
+echo "Install UFW? [y/n]"
+read UFW
+
+if [ "$UFW" == "y" ]; then
+	sudo ufw enable
+
+fi
+
+echo "Set forwarind rule in UFW to accept?[y/n]"
+read UFWForward
+if [ "$UFWForward" == "y" ]; then
+	sudo sed -i "s:DEFAULT_FORWARD_POLICY="DROP":DEFAULT_FORWARD_POLICY="ACCEPT":" /etc/default/ufw
+fi
+
+echo "Set allow UFW Ports?[y/n]"
+read UFWForward
+if [ "$UFWForward" == "y" ]; then
+	sudo ufw allow 80
+	sudo ufw allow 22
+	sudo ufw allow 21
+	sudo ufw allow 42
+	sudo ufw allow 81
+	sudo ufw allow 135
+	sudo ufw allow 443
+	sudo ufw allow 445
+	sudo ufw allow 1433
+	sudo ufw allow 3306
+	sudo ufw allow 5060
+	sudo ufw allow 5061
+	sudo ufw allow 69/udp
+	sudo ufw allow 5069/udp
+fi
+
+
+#/etc/default/
+#DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4 --iptables=false" 
+
+
+
 
 echo '################################################'
 echo '# Load contents of loadSQL.sql into phpmyadmin #'
@@ -119,3 +159,8 @@ echo '################################################'
 echo '################################################'
 echo '# Then configure sys link in Kippo container   #'
 echo '################################################'
+
+echo '################################################'
+echo '# Add /etc/start.sh to your rc.local           #'
+echo '################################################'
+
