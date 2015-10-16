@@ -178,8 +178,8 @@ interact_port = 5123
 [database_mysql]
 host = -localhost-
 database = kippo
-username = kippo
-password = KippoK33perP@ssw0rd
+username = -kippouser-
+password = -kippopass-
 port = 3306
 
 # XMPP Logging
