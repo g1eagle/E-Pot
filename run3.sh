@@ -104,7 +104,10 @@ sudo sed -i "s/-glastopfuser-/$glastopfuser/" $DIR/loadSQL.sql
 sudo sed -i "s/-glastopfpass-/$glastopfpass/" $DIR/loadSQL.sql
 sudo sed -i "s/-kippouser-/$kippouser/" $DIR/loadSQL.sql
 sudo sed -i "s/-kippopass-/$kippopass/" $DIR/loadSQL.sql
-sudo sed -i "s/-dir-/$DIR/" /etc/start.sh
+echo "load start"
+sudo sed -i "s:dir:$DIR:" /etc/start.sh
+
+echo "$DIR"
 
 sudo docker start kippo
 sudo docker start glastopf
