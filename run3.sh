@@ -97,7 +97,7 @@ sudo sed -i "s/-glastopfuser-/$glastopfuser/" $DIR/var/glastopf/glastopf.cfg2
 sudo sed -i "s/-glastopfpass-/$glastopfpass/" $DIR/var/glastopf/glastopf.cfg2
 
 sudo sed -i "s/-kippouser-/$kippouser/" $DIR/var/kippo/kippo.cfg2
-sudo sed -i "s/-kippopass-/$kippopass/" $DIR/var/kippo/kippo,cfg2
+sudo sed -i "s/-kippopass-/$kippopass/" $DIR/var/kippo/kippo.cfg2
 
 
 sudo sed -i "s/-glastopfuser-/$glastopfuser/" $DIR/loadSQL.sql
