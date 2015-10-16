@@ -1,8 +1,8 @@
-CREATE DATABASE kippo;
-GRANT ALL ON kippo.* TO 'kippo'@'localhost' IDENTIFIED BY 'KippoK33perP@ssw0rd';
-
 CREATE DATABASE glaspot
-GRANT ALL ON glaspot.* TO 'glastopf'@'localhost' IDENTIFIED BY 'GlastopfK33perP@ssw0rd';
+GRANT ALL ON glaspot.* TO '-glastopfuser-'@'%' IDENTIFIED BY '-glastopfpass-';
+
+CREATE DATABASE kippo;
+GRANT ALL ON kippo.* TO '-kippouser-'@'%' IDENTIFIED BY '-kippopass-';
 
 CREATE TABLE `auth` (
   `id` int(11) NOT NULL auto_increment,
