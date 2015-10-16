@@ -32,7 +32,7 @@ ident = x8yer@hp1
 [main-database]
 enabled = True
 #connection_string = sqlite:///db/glastopf.db
-connection_string = mysql://glastopf:GlastopfK33perP@ssw0rd@-localhost-/glaspot
+connection_string = mysql://-glastopfuser-:-glastopfpass-@-localhost-/glaspot
 
 [surfcertids]
 enabled = False
