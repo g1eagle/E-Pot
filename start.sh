@@ -30,7 +30,7 @@ sleep 30s
 MYSQLIP=$(sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' mysql)
 echo "$MYSQLIP"
 sudo cp $DIR/var/glastopf/glastopf.cfg2 $DIR/var/glastopf/glastopf.cfg
-sudo cp $DIR//var/kippo/kippo.cfg2 $DIR/var/kippo/kippo.cfg
+sudo cp $DIR/var/kippo/kippo.cfg2 $DIR/var/kippo/kippo.cfg
 sudo sed -i "s/-localhost-/$MYSQLIP/" $DIR/var/glastopf/glastopf.cfg
 sudo sed -i "s/-localhost-/$MYSQLIP/" $DIR/var/kippo/kippo.cfg
 
