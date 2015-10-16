@@ -70,6 +70,49 @@ sudo docker-compose up -d
 
 docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin
 
-cp /home/student/var/glastopf/glastopf.cfg /home/student/var/glastopf/glastopf.cfg2
+
+sudo curl -q https://raw.githubusercontent.com/g1eagle/E-Pot/master/start.sh > /etc/start.sh
 
 
+echo "Enter Glastopf User name"
+read glastopfuser
+
+echo "Enter Glastopf Password for mysql"
+read glastopfpass
+
+echo "Enter Kippo User name"
+read kippouser
+
+echo "Enter Kippo Password for mysql"
+read kippopass
+
+sudo docker stop kippo
+sudo docker stop glastopf
+
+sudo curl -q https://raw.githubusercontent.com/g1eagle/E-Pot/master/Docker%20Setup/kippo.cfg2 > $DIR/var/kippo/kippo.cfg2
+sudo curl -q https://github.com/g1eagle/E-Pot/blob/master/Docker%20Setup/glastopf.cfg2 > $DIR/var/glastopf/glastopf.cfg2
+
+sudo curl -q https://raw.githubusercontent.com/g1eagle/E-Pot/master/loadSQL.sql > $DIR/loadSQL.sql
+sudo sed -i "s/-glastopfuser-/$glastopfuser/" $DIR/var/glastopf/glastopf.cfg2
+sudo sed -i "s/-glastopfpass-/$glastopfpass/" $DIR/var/glastopf/glastopf.cfg2
+
+sudo sed -i "s/-kippouser-/$kippouser/" $DIR/var/kippo/kippo.cfg2
+sudo sed -i "s/-kippopass-/$kippopass/" $DIR/var/kippo/kippo,cfg2
+
+
+sudo sed -i "s/-glastopfuser-/$glastopfuser/" $DIR/loadSQL.sql
+sudo sed -i "s/-glastopfpass-/$glastopfpass/" $DIR/loadSQL.sql
+sudo sed -i "s/-kippouser-/$kippouser/" $DIR/loadSQL.sql
+sudo sed -i "s/-kippopass-/$kippopass/" $DIR/loadSQL.sql
+sudo sed -i "s/-dir-/$DIR/" /etc/start.sh
+
+sudo docker start kippo
+sudo docker start glastopf
+
+echo '################################################'
+echo '# Load contents of loadSQL.sql into phpmyadmin #'
+echo '################################################'
+
+echo '################################################'
+echo '# Then configure sys link in Kippo container   #'
+echo '################################################'

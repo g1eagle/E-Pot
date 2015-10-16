@@ -1,4 +1,5 @@
 #!/bin/bash
+DIR='-dir-'
 sleep 10 
 RUNNING=$(sudo docker inspect --format '{{.State.Running}}' mysql)
 while [ "$RUNNING"  == false ]; do
@@ -13,8 +14,8 @@ while [ "$RUNNING"  == false ]; do
 done
 
 MYSQLIP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' mysql)
-cp /home/Student/var/glastopf/glastopf.cfg2 /home/Student/var/glastopf/glastopf.cfg
-sed -i "s/-localgost-/$MYSQLIP/" /home/Student/var/glastopf.cfg
+cp $DIR/var/glastopf/glastopf.cfg2 $DIR/var/glastopf/glastopf.cfg
+sed -i "s/-localgost-/$MYSQLIP/" $DIR/var/glastopf.cfg
 
 RUNNING=$(sudo docker inspect --format '{{.State.Running}}' glastopf)
 while [ "$RUNNING"  == false ]; do
