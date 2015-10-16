@@ -70,6 +70,6 @@ sudo docker-compose up -d
 
 docker run -d --link mysql:mysql -e MYSQL_USERNAME=$root --name phpmyadmin -p 3240:80 g1eagle/docker_phpmyadmin
 
-cp /home/Student/var/glastopf/glastopf.cfg1 /home/Student/var/glastopf/glastopf.cfg2
+cp /home/student/var/glastopf/glastopf.cfg /home/student/var/glastopf/glastopf.cfg2
 
 
