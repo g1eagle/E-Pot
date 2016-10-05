@@ -61,7 +61,7 @@ echo "Enter Root Password for Mysql"
 read mysqlpw
 
 echo "Setting up mysql"
-docker run --name mysql -v /var/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d mysql
+docker run --name mysql -v /var/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$mysqlpw -d hypriot/rpi-mysql:latest
 
 sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}:3306' mysql | xargs wget --retry-connrefused --tries=5 -q --wait=5 --spider
 
