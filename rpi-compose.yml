@@ -1,0 +1,61 @@
+mysql:
+    image: mysql
+    environment:
+        - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./var/mysql:/vol/mysql
+    restart: always
+phpmyadmin:     
+    image: g1eagle/docker_phpmyadmin
+    environment:
+        - MYSQL_USERNAME=root
+    links:
+        - mysql:phpmyadmin-mysql
+    ports:
+       - "3240:80"
+glastopf:
+    image: g1eagle/docker_glastopf
+    container_name: glastopf
+    volumes:
+      - ./var/glastopf:/vol/glastopf
+      - ./var/glastopf1/log:/vol/glastopf/log
+    external_links:
+        - mysql:glastopf-mysql
+    ports:
+       - "80:80"
+    restart: always
+    working_dir: /vol/glastopf
+kippo:
+    image: andrewmichaelsmith/kippo
+    container_name: kippo
+    volumes:
+       - ./var/kippo:/vol/kippo
+    external_links:
+        - mysql:kippo-mysql
+    expose:
+       - "3000"
+    ports:
+       - "22:2222"
+    restart: always
+    working_dir: /vol/kippo
+dionaea:
+    image: g1eagle/docker_dionaea
+    container_name: dionaea
+    volumes:
+       - ./var/dionaea:/vol/dionaea
+    external_links:
+        - mysql:dionaea-mysql
+    ports:
+       - "21:21"
+       - "42:42"
+       - "81:80"       
+       - "135:135"
+       - "443:443"
+       - "445:445"
+       - "1433:1433"
+       - "3306:3306"
+       - "5060:5060"
+       - "5061:5061"
+       - "69:69/udp"
+       - "5060:5060/udp"
+    restart: always
