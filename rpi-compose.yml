@@ -1,18 +1,3 @@
-mysql:
-    image: mysql
-    environment:
-        - MYSQL_ROOT_PASSWORD=password
-    volumes:
-      - ./var/mysql:/vol/mysql
-    restart: always
-phpmyadmin:     
-    image: g1eagle/docker_phpmyadmin
-    environment:
-        - MYSQL_USERNAME=root
-    links:
-        - mysql:phpmyadmin-mysql
-    ports:
-       - "3240:80"
 glastopf:
     image: g1eagle/docker_glastopf
     container_name: glastopf
